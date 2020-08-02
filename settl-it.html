@@ -10,54 +10,35 @@
                       Magic Number
         ---------------------------------------*/
         
-
-        var magicNum = function() {
-
-        var player1 = 50;
-        var player2= 30;
-        var wager = 'will do the dishes'
-        var highest = 100;
-        var rounds = 3;
-
-        let results1 = [];
-        let results2 = [];
-        let i = 1
-
-        while (i <= round) {
-        var num = Math.floor(Math.random() * (x - 1) + 1);
-        var score1 = Math.abs(num - ply1);
-        var score2 = Math.abs(num - ply2);
-        console.log(score1, score2)
-        score1 < score2 ? results1.push('ply1 wins') : 
-        score1 === score2 ? 'tie' : results2.push('ply2 wins!');
-        i++
-        }
-
-        winner(results1, results2);
-        var $win = $('<div></div>');
-        $win.text('hello world')
-        $win.appendTo('body');
-        }
-
-        var winner = function(r1, r2) {
-        return r1.length > r2.length ? 
-               'ply2 ' + wager : 
-               r1.length === r2.length ? 
-               'tied!' : 
-               'ply1 ' + wager
-        }
-        magicNum()
- 
        
         
 
         </script>
 
         <style>
-            * {
-                box-sizing: border-box;
-                max-width: 600px;
-                max-height: 800;
+            body {
+                margin: 0;
+                max-width: 100vw;
+                max-height: 100vh;
+            }
+
+            header {
+                border: 3px solid black;
+                padding: 2%
+            }
+
+            .logo {
+                border: 3px solid black;
+                width: 20%;
+                margin: auto;
+            }
+
+            .players {
+                border: 3px solid black;
+            }
+
+            .wager {
+                border: 3px solid black;
             }
 
             
@@ -66,7 +47,7 @@
         </style>
 
         <header>
-            <div>settl-it</div>
+            <div class="logo" >settl-it</div>
             <div class="players">
                 players
             </div>
@@ -75,11 +56,6 @@
             </div> 
         </header>
         
-
-      
-          
-    
-
         <div class="magic-number">
             magic-number
         </div>
