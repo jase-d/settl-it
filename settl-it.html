@@ -5,19 +5,10 @@
     </head>
 
     <body>
-        <script>
-        /*---------------------------------------
-                      Magic Number
-        ---------------------------------------*/
-        
        
-        
-
-        </script>
 
         <style>
             
-
             body {
                 margin: 0;
                 max-width: 100vw;
@@ -116,9 +107,9 @@
                 font-size: 22px;
             }
 
-            .container {
+            /* .container {
                 
-            }
+            } */
 
             .scores {
                 border: 3px solid #0000;
@@ -161,52 +152,60 @@
             }
 
             .random-number {
-                border: 3px solid #f3f3f310;
+                border: 3px solid #ffdddd8c;
                 border-radius: 3px;
                 width: 15%;
-                padding: 4%;
+                padding: 2%;
                 margin: 1% auto;
-                background-color: white;
+                background-image: radial-gradient(#fffdfdfa, #f9a2a214);
+                
+            }
 
+            #random {
+                text-align: center;
+                font-size: 36px;
+                margin: auto;
             }
 
             .num1 {
                 border: 2px solid black;
                 margin: 2% auto;
                 margin-left: 5%;
-                padding: 2.5%;
+                padding: .5%;
                 width: 10%;
                 float: left;
+
+                font-size: 36px;
                 
             }
             .num2 {
                 border: 2px solid black;
                 margin: 2% auto;
                 margin-right: 5%;
-                padding: 2.5%;
+                padding: .5%;
                 width: 10%;
                 float: right;
                 position: relative;
 
+                font-size: 36px;
             }
 
             footer {
                 margin: auto;
+                margin-bottom: 3%;
                 padding: 1%;
                 background-image: linear-gradient(180deg, #ff733e00, #ffffffd4);
             }
 
             .announce {
-                border-bottom: 2px solid black;
-                border-radius: 8px;
-                margin: auto;
+               
+                background-image: linear-gradient(180deg, #ff733e00, #ffffffd4);
+                margin: 0 auto;
                 width: 50%;
-                padding: 3% 0;
+                padding: 2% 0;
             }
 
-            
         
-            
         </style>
 
         <header>
@@ -238,13 +237,12 @@
             </div>
 
             <div class="action">
-                <div class="random-number"></div>
+                <div class="random-number" id="click-box" ><p id="random">START</p></div>
                 <div class="num1">num 1</div><div class="num2">num 2</div>
             </div>
             
         </div>
-        <footer>
             <div class="announce">results</div>
-        </footer>
     </body>
+    <script src="randomNum.js"></script>
 </html>
