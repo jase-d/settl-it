@@ -1,11 +1,33 @@
  
+  //variables for log in page
+  // var wagerIn = document.getElementById('wager-input');
+  // var playerOne = {};
+  // var playerTwo = {};
+  // playerOne.name = document.getElementById('one-name').value;
+  // playerTwo.name = document.getElementById('two-name').value;
+  // playerOne.number = document.getElementById('number-one').value;
+  // playerTwo.number = document.getElementById('number-two').value;
+  // var cont = document.getElementById('continue');
+  
+  
+  
+  //variables for main page
   var randomNum = document.getElementById('random');
   var clickBox = document.getElementById('click-box')
   var ply1Num = document.querySelector('.num1');
   var ply2Num = document.querySelector('.num2');
   var announce = document.querySelector('.announce');
-  ply1Num.textContent = 24;
-  ply2Num.textContent = 78;
+
+
+  
+
+  /*----------------------------------------------*/
+  // cont.addEventListener('submit', function() {
+  //   ply1Num.textContent = firstNum.value;
+  //   ply2Num.textContent = secondNum.value;
+  // });
+
+  
   var theNumber, windUp;
   var x = 0;
 
@@ -14,10 +36,7 @@
     randomNum.textContent = theNumber;
     Math.abs(theNumber - 24) > Math.abs(theNumber - 78) ? announce.textContent = 'Player 2 Wins!' : (theNumber - ply1Num) === (theNumber - ply2Num) ? announce.textContent = 'You tied, Play Again!' : announce.textContent = 'Player 1 wins!'
     // windUp = window.setInterval(magicNum, 3000); 
-    
-    x++
-
-    
+        
   }
   var click = clickBox.addEventListener('click', magicNum);
   
