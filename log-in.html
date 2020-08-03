@@ -15,7 +15,6 @@
                 max-height: 100vh;
                 text-align: center;
                 background-image: linear-gradient(#f5f5f5c7, #fac7c70a, #ff733e2e 400px);
-
             }
 
             header {
@@ -24,26 +23,28 @@
             }
 
             .logo {
+                border-top: 3px solid black;
                 border-bottom: 3px solid black;
-                width: 20%;
+                width: 15%;
                 padding: 1%;
                 margin: auto;
                 margin-top: 10%;
 
                 font-size: 54px;
                 background-image: linear-gradient( whitesmoke 500px);
-                text-decoration: line-through;
-                text-decoration-color: #f911119e;
             }
 
             .wager {
-                border: 2px solid black;
+                border: 3px solid #ffdddd8c;
                 border-radius: 3px;
                 border-top: none;
                 width: 75%;
                 padding: 1%;
                 margin: auto;
                 margin-top: 10%;
+
+                text-align: center;
+                font-size: 18px;
             }
 
             .players {
@@ -70,7 +71,7 @@
                 width: 40.5%;
                 float: left;
                 
-                font-size: 40px
+                font-size: 45px
             }
             .name1 {
                 border: none;
@@ -95,7 +96,7 @@
                 float: right;
                 position: relative;
 
-                font-size: 40px;
+                font-size: 45px;
             }
             .name2 {
                 border: none;
@@ -168,28 +169,7 @@
                 margin: auto;
             }
 
-            .num1 {
-                border: 2px solid black;
-                margin: 2% auto;
-                margin-left: 5%;
-                padding: .5%;
-                width: 10%;
-                float: left;
-
-                font-size: 36px;
-                
-            }
-            .num2 {
-                border: 2px solid black;
-                margin: 2% auto;
-                margin-right: 5%;
-                padding: .5%;
-                width: 10%;
-                float: right;
-                position: relative;
-
-                font-size: 36px;
-            }
+         
 
             footer {
                 margin: 0 auto;
@@ -210,19 +190,18 @@
         <header>
             <div class="logo" >settl-it</div>
 
-            <div class="wager">
-                wager
-            </div> 
+            <input class="wager" placeholder="The winner or loser has to...">
+            </input> 
 
             <div class="players">
                 <div class="plybar">
                     <div class="ply1">
-                        <input class="name1"></input>
+                        <input class="name1" placeholder="Player 1's Name"></input>
                         V
                     </div>
                     <div class="ply2">
                         S
-                        <input class="name2"></input>
+                        <input class="name2" placeholder="Player 2's Name"></input>
                     </div>
                 </div>
                 
@@ -237,7 +216,7 @@
             
 
             <div class="action">
-                <div class="random-number" id="click-box" ><p id="random">CONTINUE</p></div>
+                <div class="random-number" id="click-box" ><a href="settl-it.html" id="random">CONTINUE</a></div>
             </div>
             
         </div>
