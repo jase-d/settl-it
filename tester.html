@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet"> -->
+    </head>
+
+    <body>
+       
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+            input[type=text] {
+                border: 1px solid #ccc;
+                -webkit-transition: 1s;
+                transition: 1s;
+                outline: none;
+            }
+
+            input[type=text]:hover {
+                border: 1px solid #555;
+            }
+
+            .wager {
+                border: 1px solid #ccc;
+                border-top: none;
+                box-shadow: 2px 2px 2px 2px lightgray;
+                -webkit-transition: .5s;
+                transition: 1s;
+                outline: none;
+            }
+
+            .wager:focus {
+                border: 1px solid #555;
+                box-shadow: 1px 1px 1px 1px lightgray;
+                border-top: none;
+            }
+
+            .name1-input {
+                border: 1px solid #ccc;
+                padding: 3% 0;
+                border-top: none;
+                -webkit-transition: .5s;
+                transition: 1s;
+                outline: none;
+            }
+
+            .name1-input:focus {
+                border-top: 1px solid #555;
+                border-bottom: 1px solid #555;
+                box-shadow: 1px 1px 1px 1px lightgray;
+                border-top: none;
+            }
+            .name2-input {
+                border: 1px solid #ccc;
+                padding: 3% 0;
+                border-top: none;
+                -webkit-transition: .5s;
+                transition: 1s;
+                outline: none;
+            }
+
+            .name2-input:focus {
+                border-top: 1px solid #555;
+                border-bottom: 1px solid #555;
+                box-shadow: 0px 0px 1px 1px lightgray;
+                border-top: none;
+            }
+            
+            body {
+                margin: 0 auto;
+                max-width: 70vw;
+                max-height: 70vh;
+                text-align: center;
+                background-image: linear-gradient(#f5f5f5c7, #fac7c70a, #ff733e2e 400px);
+                font-family: 'Quicksand', sans-serif;
+            }
+
+            header {
+                border: 3px solid none;
+                padding: .5%
+            }
+
+            .logo {
+                border-bottom: 3px solid black;
+                width: 20%;
+                padding: 1%;
+                margin: 0 auto;
+
+                font-size: 54px;
+                font-family: 'Kalam', cursive;
+                background-image: linear-gradient( whitesmoke 500px);
+                text-decoration: line-through;
+                text-decoration-color: #f91111;
+            }
+
+            .wager {
+                border: 3px solid #ffdddd8c;
+                border-radius: 3px;
+                border-top: none;
+                width: 75%;
+                padding: 1%;
+                margin: auto;
+                margin-top: 5%;
+
+                text-align: center;
+                font-size: 18px;
+                background-image: radial-gradient(transparent, #ff9b9b1f);
+            }
+
+            .players {
+                margin: 5% 0;
+                margin-top: 0;
+            }
+
+            .plybar {
+                border-top: 3px solid #0000;
+                border-radius: 15px;
+                padding: 1%;
+                margin: 1% 0;
+                margin-bottom: 0;
+
+            }
+            .ply1 {
+                border: thin solid black;
+                box-shadow: 0px 2px 0px 0px gray;
+                text-align: right;
+                border-right: none;
+                border-left: none;
+                margin: .25% 0;
+                margin-top: 3%;
+                margin-left: 9%;
+                padding: .2% 0;
+                width: 40.5%;
+                float: left;
+                
+                font-size: 40px
+            }
+            .name1-input {
+                border: none;
+                margin: 0;
+                padding: 3% 0;
+                width: 88%;
+                float: left;
+
+                text-align: center;
+                font-size: 22px;
+                background-image: linear-gradient(45deg, #ffe7de, transparent);
+            }
+            .ply2 {
+                border: thin solid black;
+                box-shadow: 0px 2px 0px 0px gray;
+                text-align: left;
+                border-left: none;
+                border-right: none;
+                margin: .25% 0;
+                margin-right: 9%;
+                margin-top: 3%;
+                padding: .2% 0;
+                width: 40.5%;
+                float: right;
+                position: relative;
+
+                font-size: 40px;
+            }
+            .name2-input {
+                border: none;
+                margin: 0;
+                padding: 3% 0;
+                width: 88%;
+                float: right;
+                position: relative;
+
+                text-align: center;
+    
+                font-size: 22px;
+                background-image: linear-gradient(270deg, #ffe7de, transparent);
+            }
+
+            /* .container {
+                
+            } */
+
+            .scores {
+                border: 3px solid #0000;
+                margin: 3% 0;
+                margin-bottom: 0;
+            }
+
+            .score1 {
+                border: 1px solid #ccc;
+                border-top: none;
+                ;
+                box-shadow: 2px 2px 2px 2px lightgray;
+             
+                padding: 1.5%;
+                border-left: none;              
+                margin: 2% auto;
+                margin-top: 2%;
+                margin-left: 30%;
+                width: 10%;
+                height: 5px;
+                max-height: 5px;
+                float: left;
+                background-image: radial-gradient(#fffdfdfa, #ffffffbe);
+                
+            }
+            .score2 {
+                border: 1px solid #ccc;
+                border-top: none;
+                box-shadow: 2px 2px 2px 2px lightgray;
+                border-right: none;  
+                padding: 1.5%;             
+                margin: 2% auto;
+                margin-top: 2%;
+                margin-right: 30%;
+                width: 10%;
+                height: 5px;
+                max-height: 5px;
+                float: right;
+                position: relative;
+                background-image: radial-gradient(#fffdfdfa, #ffffffbe);
+
+            }
+
+            .action {
+                border: 3px solid #0000;
+                margin: 5%;
+                margin-bottom: 10%;
+            }
+
+            .random-number {
+                border: 5px solid #0000008c;
+                border-collapse: collapse;
+                border-radius: 8px;
+                width: 35%;
+                padding: 7%;
+                margin: 2% auto;
+                background-image: radial-gradient(#fffdfdfa, #ffffffbe);
+            }
+
+            #random {
+                text-align: center;
+                font-size: 36px;
+                margin: auto;
+                padding: 5%;
+                overflow-x: scroll;
+            }
+
+            .num1-input {
+                border: 4px solid #7755558c;
+                border-radius: 1px;
+                box-shadow: .5px .5px 1px 3px rgb(255, 220, 220);
+                margin: 0% auto;
+                margin-left: 5%;
+                padding: 1.5%;
+                width: 10%;
+                float: left;
+
+                font-size: 36px;
+                text-align: center;
+                background-image: radial-gradient(transparent, #ff9b9b1f);
+            }
+            .num2-input {
+                border: 4px solid #7755558c;
+                border-radius: 1px;
+                box-shadow: .5px .5px 1px 3px rgb(255, 220, 220);
+                margin: 0% auto;
+                margin-right: 5%;
+                padding: 1.5%;
+                width: 10%;
+                float: right;
+                position: relative;
+
+                font-size: 36px;
+                text-align: center;
+                background-image: radial-gradient(transparent, #ff9b9b1f);
+            }
+
+            footer {
+                margin: 0% auto;
+                padding: 0%;
+                background-image: linear-gradient(180deg, #ff733e00, #ffffffd4);
+            }
+
+            .announce {
+               
+                background-image: linear-gradient(180deg, #ff733e00, #ffffffd4);
+                margin: 1% auto;
+                margin-bottom: .5%;
+                width: 50%;
+                padding: 1%;
+            }
+
+        
+        </style>
+        
+
+        <header>
+            <div class="logo" >-settl-it-</div>
+            <br><p>"Let's just settle this"</p>
+            
+            <input class="wager" placeholder="The loser has to...">
+                
+        </input> 
+
+            <div class="players">
+                <div class="plybar">
+                    <div class="ply1">
+                        <input class="names name1-input" placeholder="Player 1 Name"></input>
+                        V
+                    </div>
+                    <div class="ply2">
+                        S
+                        <input class="names name2-input" placeholder="Player 2 Name"></input>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </header>
+        
+        <div class="container">
+            <div class="scores">
+                    <div id="score1" class="score1"></div><div id="score2" class="score2"></div>
+            </div>
+
+            <div class="action">
+                <div class="random-number" id="click-box" ><p id="random">START</p></div>
+                <input type="text" class="num1-input" id="number-one" placeholder="1-100"></input><input type="text" class="num2-input" id="number-two" placeholder="1-100"></input>
+            </div>
+            
+        </div>
+        
+            
+    </body>
+    <script src="randomNum.js"></script>
+</html>

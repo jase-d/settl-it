@@ -11,30 +11,49 @@
   var wager = document.querySelector('.wager');
 
   /*----------------------------------------------*/
+  var reset = function() {
+
+  }
+
+  /*----------------------------------------------*/
 
   var magicNum = function() {
     theNumber = Math.floor(Math.random() * (100 - 1) + 1);
-    
     randomNum.textContent = theNumber;
     //if player 1 wins
     if (Math.abs(theNumber - parseFloat(ply1Num.value)) > Math.abs(theNumber - parseFloat(ply2Num.value))) {
-      announce.textContent = ply1Name.value + ' has to ' + wager.value;
       score2.textContent += '*'
+      if (score2.textContent.length === 2) {
+        randomNum.textContent = ply2Name.value + ' has to: ' + wager.value;
+        score1.textContent = '';
+        score2.textContent = '';
+        // randomNum.textContent = 'Play Again?'
+      }
     } else if ((theNumber - parseFloat(ply1Num.value)) === (theNumber - parseFloat(ply2Num.value))) {
-      announce.textContent = 'You tied, Play Again!'
+      randomNum.textContent = 'You tied, Play Again!'
     } else {
-      announce.textContent = ply2Name.value + ' has to ' + wager.value;
       score1.textContent += '*'
-    }
-    // Math.abs(theNumber - parseFloat(ply1Num.value)) > Math.abs(theNumber - parseFloat(ply2Num.value)) ?
-    //  announce.textContent = 'Player 2 Wins!' :
-    //  //if both tie
-    //  (theNumber - parseFloat(ply1Num.value)) === (theNumber - parseFloat(ply2Num.value)) ?
-    //   announce.textContent = 'You tied, Play Again!' :
-    //   //otherwise player 2 wins
-    //   announce.textContent = 'Player 1 wins!';    
+      if (score1.textContent.length === 2) {
+        randomNum.textContent = ply2Name.value + ' has to: ' + wager.value;
+        score1.textContent = '';
+        score2.textContent = '';
+        // randomNum.textContent = 'Play Again?'
+      }
+    }  
   }
   var click = clickBox.addEventListener('click', magicNum);
+
+
+  
+  // var resultWait;
+  // var wait = function() {
+  //   resultWait = window.setInterval(magicNum, 1000);
+  // }
+  // var show = function() {
+  //   window.clearTimeout(wait);
+  // }
+
+  // var click = clickBox.addEventListener('click', wait)
   
 
 
