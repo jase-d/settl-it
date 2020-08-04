@@ -38,7 +38,7 @@
                 border-top: none;
             }
 
-            .names {
+            .name1-input {
                 border: 1px solid #ccc;
                 padding: 3% 0;
                 border-top: none;
@@ -47,9 +47,25 @@
                 outline: none;
             }
 
-            .names:focus {
-                border: 1px solid #555;
+            .name1-input:focus {
+                border-top: 1px solid #555;
+                border-bottom: 1px solid #555;
                 box-shadow: 1px 1px 1px 1px lightgray;
+                border-top: none;
+            }
+            .name2-input {
+                border: 1px solid #ccc;
+                padding: 3% 0;
+                border-top: none;
+                -webkit-transition: .5s;
+                transition: 1s;
+                outline: none;
+            }
+
+            .name2-input:focus {
+                border-top: 1px solid #555;
+                border-bottom: 1px solid #555;
+                box-shadow: 0px 0px 1px 1px lightgray;
                 border-top: none;
             }
             
@@ -109,7 +125,7 @@
             }
             .ply1 {
                 border: thin solid black;
-                box-shadow: 0px 0px 1px 0px gray;
+                box-shadow: 0px 2px 0px 0px gray;
                 text-align: right;
                 border-right: none;
                 border-left: none;
@@ -129,8 +145,7 @@
                 width: 88%;
                 float: left;
 
-                text-align: right;
-                text-indent: 20rem;
+                text-align: center;
                 font-size: 22px;
                 background-image: linear-gradient(45deg, #ffe9e1, transparent);
             }
@@ -158,8 +173,8 @@
                 float: right;
                 position: relative;
 
-                text-align: left;
-                text-indent: 10;
+                text-align: center;
+    
                 font-size: 22px;
                 background-image: linear-gradient(270deg, #ffe9e1, transparent);
             }
@@ -277,20 +292,21 @@
 
         <header>
             <div class="logo" >-settl-it-</div>
+            <br><p>"Let's just settle this"</p>
             
-            <input class="wager">
+            <input class="wager" placeholder="The loser has to...">
                 
         </input> 
 
             <div class="players">
                 <div class="plybar">
                     <div class="ply1">
-                        <input class="names name1-input"></input>
+                        <input class="names name1-input" placeholder="Player 1 Name"></input>
                         V
                     </div>
                     <div class="ply2">
                         S
-                        <input class="names name2-input"></input>
+                        <input class="names name2-input" placeholder="Player 2 Name"></input>
                     </div>
                 </div>
                 
