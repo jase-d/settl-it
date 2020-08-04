@@ -7,7 +7,8 @@
   var score1 = document.getElementById('score1');
   var score2 = document.getElementById('score2');
   var ply1Name = document.querySelector('.name1-input');
-  var ply2Name = document.querySelector('.name2-input')
+  var ply2Name = document.querySelector('.name2-input');
+  var wager = document.querySelector('.wager');
 
   /*----------------------------------------------*/
 
@@ -17,12 +18,12 @@
     randomNum.textContent = theNumber;
     //if player 1 wins
     if (Math.abs(theNumber - parseFloat(ply1Num.value)) > Math.abs(theNumber - parseFloat(ply2Num.value))) {
-      announce.textContent = ply2Name.value + ' Wins!';
+      announce.textContent = ply1Name.value + ' has to ' + wager.value;
       score2.textContent += '*'
     } else if ((theNumber - parseFloat(ply1Num.value)) === (theNumber - parseFloat(ply2Num.value))) {
       announce.textContent = 'You tied, Play Again!'
     } else {
-      announce.textContent = ply1Name.value + ' wins!';
+      announce.textContent = ply2Name.value + ' has to ' + wager.value;
       score1.textContent += '*'
     }
     // Math.abs(theNumber - parseFloat(ply1Num.value)) > Math.abs(theNumber - parseFloat(ply2Num.value)) ?
