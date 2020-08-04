@@ -14,7 +14,6 @@
   /*----------------------------------------------*/
   //          helper functions
 
-
   var winner = function(scoreA, opponent) {
     scoreA.style.textDecoration= "line-through"
     scoreA.style.textDecorationColor= "red"
@@ -33,7 +32,8 @@
   /*----------------------------------------------*/
   //              game sequence
 
-  var magicNum = function() {
+  var settl = function() {
+    clearInterval(randomWheel);
     button.style.opacity = "0%";
     theNumber = Math.floor(Math.random() * (100 - 1) + 1);
     randomNum.textContent = theNumber;
@@ -58,13 +58,35 @@
       }
     }
   }
-  var start = button.addEventListener('click', function() {
-    button.style.opacity = "0%";
-  })
-  var click = clickBox.addEventListener('click', magicNum);
 
-  /*--------------------------------------------------------*/
-  //                     Animations
+  /*---------------------------------------------------*/
+  //                   animations
+  var randomWheel;
+  var windUp = function () {
+    theNumber = Math.floor(Math.random() * (100 - 1) + 1);
+    randomNum.textContent = theNumber
+    
+  }
+  
+  /*----------------------------------------------------*/
+  //                 event listeners
+
+  //stops wind up presents new number and records wins
+  var click = clickBox.addEventListener('click', function() {
+    button.style.opacity = '100%';
+    windUp()
+    randomWheel = setInterval(windUp, 250);
+  });
+
+  //Starts number wind up
+  var start = button.addEventListener('click', function() {
+    window.clearInterval(randomWheel);
+    button.style.opacity = '0%';
+    settl();
+  });
+  
+  
+  
  
 
 
