@@ -11,6 +11,47 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+            input[type=text] {
+                border: 1px solid #ccc;
+                -webkit-transition: 1s;
+                transition: 1s;
+                outline: none;
+            }
+
+            input[type=text]:focus {
+                border: 1px solid #555;
+            }
+
+            .wager {
+                border: 1px solid #ccc;
+                border-top: none;
+                box-shadow: 2px 2px 2px 2px lightgray;
+                -webkit-transition: .5s;
+                transition: 1s;
+                outline: none;
+            }
+
+            .wager:focus {
+                border: 1px solid #555;
+                box-shadow: 1px 1px 1px 1px lightgray;
+                border-top: none;
+            }
+
+            .names {
+                border: 1px solid #ccc;
+                padding: 3% 0;
+                border-top: none;
+                -webkit-transition: .5s;
+                transition: 1s;
+                outline: none;
+            }
+
+            .names:focus {
+                border: 1px solid #555;
+                box-shadow: 1px 1px 1px 1px lightgray;
+                border-top: none;
+            }
             
             body {
                 margin: 0;
@@ -40,13 +81,17 @@
             }
 
             .wager {
-                border: 2px solid black;
+                border: 3px solid #ffdddd8c;
                 border-radius: 3px;
-                border-bottom: none;
+                border-top: none;
                 width: 75%;
                 padding: 1%;
                 margin: auto;
-                margin-top: 3%;
+                margin-top: 5%;
+
+                text-align: center;
+                font-size: 18px;
+                background-image: radial-gradient(transparent, #ff9b9b1f);
             }
 
             .players {
@@ -64,10 +109,12 @@
             }
             .ply1 {
                 border: thin solid black;
+                box-shadow: 0px 0px 1px 0px gray;
                 text-align: right;
                 border-right: none;
                 border-left: none;
                 margin: .25% 0;
+                margin-top: 3%;
                 margin-left: 9%;
                 padding: .2% 0;
                 width: 40.5%;
@@ -75,23 +122,27 @@
                 
                 font-size: 40px
             }
-            .name1 {
-                border-right: none;
+            .name1-input {
+                border: none;
                 margin: 0;
-                padding: .5% 0;
-                width: 49%;
+                padding: 3% 0;
+                width: 88%;
                 float: left;
 
-                text-align: center;
+                text-align: right;
+                text-indent: 20rem;
                 font-size: 22px;
+                background-image: linear-gradient(45deg, #ffe9e1, transparent);
             }
             .ply2 {
                 border: thin solid black;
+                box-shadow: 2px 2px 0px gray;
                 text-align: left;
                 border-left: none;
                 border-right: none;
                 margin: .25% 0;
                 margin-right: 9%;
+                margin-top: 3%;
                 padding: .2% 0;
                 width: 40.5%;
                 float: right;
@@ -99,16 +150,18 @@
 
                 font-size: 40px;
             }
-            .name2 {
-                border-left: none;
+            .name2-input {
+                border: none;
                 margin: 0;
-                padding: .5% 0;
-                width: 49%;
+                padding: 3% 0;
+                width: 88%;
                 float: right;
                 position: relative;
 
-                text-align: center;
+                text-align: left;
+                text-indent: 10;
                 font-size: 22px;
+                background-image: linear-gradient(270deg, #ffe9e1, transparent);
             }
 
             /* .container {
@@ -117,7 +170,7 @@
 
             .scores {
                 border: 3px solid #0000;
-                margin: 1% 0;
+                margin: 3% 0;
                 margin-bottom: 0;
             }
 
@@ -128,7 +181,7 @@
                 padding: 1%;
                 border-left: none;              
                 margin: 2% auto;
-                margin-top: 0;
+                margin-top: 2%;
                 margin-left: 30%;
                 width: 10%;
                 float: left;
@@ -141,7 +194,7 @@
                 border-right: none;  
                 padding: 1%;             
                 margin: 2% auto;
-                margin-top: 0;
+                margin-top: 2%;
                 margin-right: 30%;
                 width: 10%;
                 float: right;
@@ -172,27 +225,34 @@
                 margin: auto;
             }
 
-            .num1 {
-                border: 2px solid black;
+            .num1-input {
+                border: 4px solid #7755558c;
+                border-radius: 1px;
+                box-shadow: .5px .5px 1px 3px rgb(255, 220, 220);
                 margin: 2% auto;
-                margin-left: 15%;
-                padding: .5%;
+                margin-left: 5%;
+                padding: 1.5%;
                 width: 10%;
                 float: left;
 
                 font-size: 36px;
-                
+                text-align: center;
+                background-image: radial-gradient(transparent, #ff9b9b1f);
             }
-            .num2 {
-                border: 2px solid black;
+            .num2-input {
+                border: 4px solid #7755558c;
+                border-radius: 1px;
+                box-shadow: .5px .5px 1px 3px rgb(255, 220, 220);
                 margin: 2% auto;
-                margin-right: 15%;
-                padding: .5%;
+                margin-right: 5%;
+                padding: 1.5%;
                 width: 10%;
                 float: right;
                 position: relative;
 
                 font-size: 36px;
+                text-align: center;
+                background-image: radial-gradient(transparent, #ff9b9b1f);
             }
 
             footer {
@@ -218,19 +278,19 @@
         <header>
             <div class="logo" >-settl-it-</div>
             
-            <div class="wager">
-                wager
-            </div> 
+            <input class="wager">
+                
+        </input> 
 
             <div class="players">
                 <div class="plybar">
                     <div class="ply1">
-                        <div class="name1">name1</div>
+                        <input class="names name1-input"></input>
                         V
                     </div>
                     <div class="ply2">
                         S
-                        <div class="name2">name2</div>
+                        <input class="names name2-input"></input>
                     </div>
                 </div>
                 
@@ -240,12 +300,12 @@
         
         <div class="container">
             <div class="scores">
-                    <div class="score1">score 1</div><div class="score2">score 2</div>
+                    <div id="score1" class="score1"></div><div id="score2" class="score2"></div>
             </div>
 
             <div class="action">
                 <div class="random-number" id="click-box" ><p id="random">START</p></div>
-                <div class="num1">num 1</div><div class="num2">num 2</div>
+                <input type="text" class="num1-input" id="number-one" placeholder="1-100"></input><input type="text" class="num2-input" id="number-two" placeholder="1-100"></input>
             </div>
             
         </div>
