@@ -10,6 +10,7 @@
   var ply2Name = document.querySelector('.name2-input');
   var wager = document.querySelector('.wager');
   var button = document.getElementById('btn');
+  var cont = document.getElementById('continue');
   var theNumber;
   /*----------------------------------------------*/
   //          helper functions
@@ -18,16 +19,15 @@
     scoreA.style.textDecoration= "line-through"
     scoreA.style.textDecorationColor= "red"
     randomNum.textContent = opponent.value + ' has to ' + wager.value;
-  }
-  var reset = function(scoreA, scoreB) {
     button.style.opacity = "100%"
-    button.textContent = "Play Again?"
-    randomNum.textContent = '';
-    scoreA.textContent = '';
-    scoreB.textContent = '';
-    scoreA.style.textDecoration = "none";
-    scoreB.style.textDecoration = "none";
+    
+    cont.textContent = 'Play Again?'
+    score1.textContent = '';
+    score2.textContent = '';
+    score1.style.textDecoration = "none";
+    score2.style.textDecoration = "none";
   }
+
 
   /*----------------------------------------------*/
   //              game sequence
@@ -35,6 +35,7 @@
   var settl = function() {
     clearInterval(randomWheel);
     button.style.opacity = "0%";
+    cont.style.opacity = "100";
     theNumber = Math.floor(Math.random() * (100 - 1) + 1);
     randomNum.textContent = theNumber;
     
@@ -44,43 +45,40 @@
 
     if (Math.abs(theNumber - parseFloat(ply1Num.value)) > Math.abs(theNumber - parseFloat(ply2Num.value))) {
       score2.textContent += '|';
+
       if (score2.textContent.length === 5) {
         winner(score2, ply1Name);
-      } else if (score2.textContent.length === 6) {
-        reset(score1, score2);
-      }
+      } 
     } else {
       score1.textContent += '|';
       if (score1.textContent.length === 5) {
         winner(score1, ply2Name);
-      } else if (score1.textContent.length === 6) {
-        reset(score1, score2);
-      }
+      } 
     }
   }
 
   /*---------------------------------------------------*/
   //                   animations
-  var randomWheel;
+  
   var windUp = function () {
     theNumber = Math.floor(Math.random() * (100 - 1) + 1);
     randomNum.textContent = theNumber
-    
   }
   
   /*----------------------------------------------------*/
   //                 event listeners
 
   //stops wind up presents new number and records wins
+  var randomWheel;
   var click = clickBox.addEventListener('click', function() {
     button.style.opacity = '100%';
+    cont.style.opacity = '0%';
     windUp()
     randomWheel = setInterval(windUp, 250);
   });
 
   //Starts number wind up
   var start = button.addEventListener('click', function() {
-    window.clearInterval(randomWheel);
     button.style.opacity = '0%';
     settl();
   });
