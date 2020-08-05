@@ -14,49 +14,52 @@
   var theNumber;
   /*----------------------------------------------*/
   //          helper functions
-
-  var winner = function(scoreA, opponent) {
+  var winner = function(scoreA, scoreB, opponent) {
     scoreA.style.textDecoration= "line-through"
     scoreA.style.textDecorationColor= "red"
     randomNum.textContent = opponent.value + ' has to ' + wager.value;
-    button.style.opacity = "100%"
-    
+    button.style.opacity = "0"
     cont.textContent = 'Play Again?'
-    score1.textContent = '';
-    score2.textContent = '';
-    score1.style.textDecoration = "none";
-    score2.style.textDecoration = "none";
+    scoreA.textContent = '';
+    scoreB.textContent = '';
+    scoreA.style.textDecoration = "none";
+    scoreB.style.textDecoration = "none";
   }
 
-
+  var initial = function() {
+    clearInterval(randomWheel);
+    button.style.opacity = '0';
+    cont.style.opacity = '100%';
+    cont.textContent = 'Click Once to Continue'
+    theNumber = Math.floor(Math.random() * (100 - 1) + 1);
+    randomNum.textContent = theNumber;
+  }
   /*----------------------------------------------*/
   //              game sequence
 
   var settl = function() {
-    clearInterval(randomWheel);
-    button.style.opacity = "0%";
-    cont.style.opacity = "100";
-    theNumber = Math.floor(Math.random() * (100 - 1) + 1);
-    randomNum.textContent = theNumber;
-    
+    //clears style & animation, posts random number
+    initial();
+    //if both players tie
     if ((theNumber - parseFloat(ply1Num.value)) === (theNumber - parseFloat(ply2Num.value))) {
       randomNum.textContent = 'You tied? Terrible luck please leave!';
     }
-
+    //if player 2 wins round
     if (Math.abs(theNumber - parseFloat(ply1Num.value)) > Math.abs(theNumber - parseFloat(ply2Num.value))) {
       score2.textContent += '|';
-
+    //if player 2 wins game
       if (score2.textContent.length === 5) {
-        winner(score2, ply1Name);
+        winner(score2, score1, ply1Name);
       } 
+    //if player 1 wins round
     } else {
       score1.textContent += '|';
+    //if player 1 wins game
       if (score1.textContent.length === 5) {
-        winner(score1, ply2Name);
+        winner(score1, score2, ply2Name);
       } 
     }
   }
-
   /*---------------------------------------------------*/
   //                   animations
   
@@ -82,16 +85,3 @@
     button.style.opacity = '0%';
     settl();
   });
-  
-  
-  
- 
-
-
- 
-
-
-
-  
-   
-  
