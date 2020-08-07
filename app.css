@@ -4,7 +4,7 @@
 @keyframes hello {
     from {
         opacity: 0%;
-        
+
     }
     to {
         opacity: 100%;
@@ -27,17 +27,14 @@ body {
         font-size: 30.5px;
         letter-spacing: .5px;
     }
-    
+
 }
 #random {
     animation-name: grower;
     animation-duration: 2s;
     animation-iteration-count: 10;
     animation-timing-function: ease-in-out;
-    
-}
-#random {
-    font-size: 30px
+    font-size: 30px;
 }
 
 html {
@@ -218,7 +215,7 @@ header {
 }
 
 .score1 {
-    border-left: none;              
+    border-left: none;
     width: 10%;
     float: left;
     background-image: radial-gradient(#fffdfdfa, #ffffffbe);
@@ -227,7 +224,7 @@ header {
     color: red
 }
 .score2 {
-    border-right: none;  
+    border-right: none;
     width: 10%;
     height: 5px;
     max-height: 5px;
@@ -251,7 +248,7 @@ header {
     margin-bottom: 13.5%;
     font-size: 22px;
     box-sizing: content-box;
-    opacity: 0;
+    display: none;
 }
 
 .random-number {
