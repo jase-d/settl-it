@@ -28,7 +28,7 @@
 
   var initial = function() {
     clearInterval(randomWheel);
-    button.style.opacity = '0';
+    button.style.display = 'none';
     cont.style.opacity = '100%';
     cont.textContent = 'Click Once to Continue'
     theNumber = Math.floor(Math.random() * (100 - 1) + 1);
@@ -50,38 +50,38 @@
     //if player 2 wins game
       if (score2.textContent.length === 5) {
         winner(score2, score1, ply1Name);
-      } 
+      }
     //if player 1 wins round
     } else {
       score1.textContent += '|';
     //if player 1 wins game
       if (score1.textContent.length === 5) {
         winner(score1, score2, ply2Name);
-      } 
+      }
     }
   }
   /*---------------------------------------------------*/
   //                   animations
-  
+
   var windUp = function () {
     theNumber = Math.floor(Math.random() * (100 - 1) + 1);
     randomNum.textContent = theNumber
   }
-  
+
   /*----------------------------------------------------*/
   //                 event listeners
 
   //stops wind up presents new number and records wins
   var randomWheel;
   var click = clickBox.addEventListener('click', function() {
-    button.style.opacity = '100%';
-    cont.style.opacity = '0%';
+    button.style.display = 'block';
+    cont.style.opacity = '100%';
     windUp()
     randomWheel = setInterval(windUp, 250);
   });
 
   //Starts number wind up
   var start = button.addEventListener('click', function() {
-    button.style.opacity = '0%';
+    button.style.display = 'none';
     settl();
   });
