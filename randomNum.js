@@ -9,8 +9,8 @@
   var ply1Name = document.querySelector('.name1-input');
   var ply2Name = document.querySelector('.name2-input');
   var wager = document.querySelector('.wager');
-  var button = document.getElementById('btn');
-  var cont = document.getElementById('continue');
+  var stopButton = document.getElementById('stop');
+  var continueButton = document.getElementById('continue');
   var theNumber;
   /*----------------------------------------------*/
   //          helper functions
@@ -18,8 +18,7 @@
     scoreA.style.textDecoration= "line-through"
     scoreA.style.textDecorationColor= "red"
     randomNum.textContent = opponent.value + ' has to ' + wager.value;
-    button.style.opacity = "0"
-    cont.textContent = 'Play Again?'
+    continueButton.textContent = 'Play Again?'
     scoreA.textContent = '';
     scoreB.textContent = '';
     scoreA.style.textDecoration = "none";
@@ -28,9 +27,7 @@
 
   var initial = function() {
     clearInterval(randomWheel);
-    button.style.display = 'none';
-    cont.style.opacity = '100%';
-    cont.textContent = 'Click Once to Continue'
+    continueButton.textContent = 'Continue'
     theNumber = Math.floor(Math.random() * (100 - 1) + 1);
     randomNum.textContent = theNumber;
   }
@@ -73,15 +70,16 @@
 
   //stops wind up presents new number and records wins
   var randomWheel;
-  var click = clickBox.addEventListener('click', function() {
-    button.style.display = 'block';
-    cont.style.opacity = '100%';
+  var click = continueButton.addEventListener('click', function() {
+    stopButton.style.display = 'block';
+    continueButton.style.display = 'none';
     windUp()
     randomWheel = setInterval(windUp, 250);
   });
 
   //Starts number wind up
-  var start = button.addEventListener('click', function() {
-    button.style.display = 'none';
+  var start = stopButton.addEventListener('click', function() {
+    stopButton.style.display = 'none';
+    continueButton.style.display = 'block';
     settl();
   });
