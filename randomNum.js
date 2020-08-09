@@ -14,15 +14,14 @@
   var theNumber;
   /*----------------------------------------------*/
   //          helper functions
+  
   var winner = function(scoreA, scoreB, opponent) {
-    scoreA.style.textDecoration= "line-through"
-    scoreA.style.textDecorationColor= "red"
-    randomNum.textContent = opponent.value + ' has to ' + wager.value;
-    continueButton.textContent = 'Play Again?'
+    // scoreA.style.textDecoration= "line-through";
+    // scoreA.style.textDecorationColor= "red";
     scoreA.textContent = '';
     scoreB.textContent = '';
-    scoreA.style.textDecoration = "none";
-    scoreB.style.textDecoration = "none";
+    randomNum.textContent = opponent.value + ' has to ' + wager.value;
+    continueButton.textContent = 'Play Again?'
   }
 
   var initial = function() {
