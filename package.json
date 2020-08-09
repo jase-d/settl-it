@@ -1,0 +1,26 @@
+{
+  "name": "settl-it",
+  "version": "1.0.0",
+  "description": "\"Social Gambling Agreement Game\"",
+  "main": "randomNum.js",
+  "scripts": {
+    "test": "settl-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jase-d/settl-it.git"
+  },
+  "keywords": [
+    "Social",
+    "Chance",
+    "Agreement",
+    "Game",
+    "Gamble"
+  ],
+  "author": "Jase DiNardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jase-d/settl-it"
+  },
+  "homepage": "https://github.com/jase-d/settl-it#readme"
+}
